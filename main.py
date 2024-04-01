@@ -17,21 +17,6 @@ def find_key(value):
             return key
     return None
 
-
-def find_similar(val):
-    return [title_dict[i+1] for i in sim[val-1].toarray().argsort()[0][-20:]]
-
-def recommend_to_user(val):
-    return [title_dict[i+1] for i in fit[1892].toarray().argsort()[0][-10:].tolist()]
-
-# txt = input("Введите название исполнителя: ")
-#
-# print(find_similar(find_key(txt)))
-
-
-
-
-
 txt = input("Введите топ любимых исполнителей: ")
 user_list = txt.split(', ')
 
@@ -79,8 +64,3 @@ recommend_list = fit[1892].toarray().argsort()[0][-len(user_list1)-10:].tolist()
 recommend_list = [i for i in recommend_list if i not in user_list1]
 
 print( [title_dict[i+1] for i in recommend_list])
-
-
-
-
-
